@@ -1,0 +1,19 @@
+<script type="text/javascript">
+AJS.toInit(function(){
+	// Look to see if renderissue.js is already present
+	if (AJS.$("script#renderisue").length == 0) {
+		// Nope, need it.
+		var renderIssueJS = document.createElement("script");
+		renderIssueJS.type = "text/javascript";
+		renderIssueJS.src = "http://confluence.alm.mentorg.com:8090/download/attachments/37980316/renderissue.js?api=v2";
+		renderIssueJS.id = "renderissue";
+		AJS.$("head").append(renderIssueJS);
+	}
+
+	// Now make the jsonp call to jira
+	var jiraJS = document.createElement("script");
+	jiraJS.type = "text/javascript";
+	jiraJS.src = "http://jira.alm.mentorg.com:8080/rest/api/2/issue/$paramKey?fields=description,summary&expand=renderedFields&jsonp-callback=renderIssue";
+	AJS.$("head").append(jiraJS);
+});
+</script>

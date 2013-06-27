@@ -24,5 +24,6 @@ function renderIssue(d) {
 '</div>';
 
   // console.log(markup);
+  AJS.$("#" + key).empty();
   AJS.$("#" + key).append(markup);
 }
