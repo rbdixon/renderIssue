@@ -1,3 +1,7 @@
+## Macro title: Jira Issue
+## Macro has a body: N
+## @param Key:title=Jira issue key|type=string|required=true|desc=Key of the Jira issue you want to display
+<div id="$paramKey" class="inline-jira-issue">$paramKey not loaded yet.</div>
 <script type="text/javascript">
 AJS.toInit(function(){
 	// Look to see if renderissue.js is already present
